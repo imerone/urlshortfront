@@ -1,19 +1,34 @@
-##Main landing page with Mercury planet background and animated starfield.
-#Paste any long URL into the input field and hit WARP to generate a short link instantly.
-<img width="1898" height="913" alt="image" src="https://github.com/user-attachments/assets/3205d724-62b2-40e8-906e-f3c1904e5b62" />
+# URL Shortener — Frontend
 
+This is the frontend for my URL Shortener project.
+Built with plain HTML, CSS and vanilla JavaScript — no frameworks.
+The design is space themed with a Mercury planet and animated stars in the background.
 
-Custom slug input field lets users choose their own short code.
-Instead of a random code, type anything like "mylink" to get localhost:8080/mylink.
-<img width="1021" height="550" alt="image" src="https://github.com/user-attachments/assets/452a29ab-0cd4-4b0d-9e71-9811c3b9cf1c" />
+## What it looks like
 
+The main page has a big input field where you paste your long URL and press WARP.
+It connects to the Go backend and returns a short link you can copy with one click.
 
-Active Transmissions panel showing all shortened URLs.
-Each card displays the original URL, short link, click count, and a delete button on the right.
-<img width="1899" height="906" alt="image" src="https://github.com/user-attachments/assets/146e3884-02c1-4d55-81d5-37ff35300659" />
+![Home](https://github.com/user-attachments/assets/3205d724-62b2-40e8-906e-f3c1904e5b62)
 
+You can also type your own custom slug instead of getting a random one.
+For example type "mylink" and you get localhost:8080/mylink.
 
-Confirm Deletion modal with ABORT and DESTROY options.
-Users can safely delete any shortened URL with a confirmation step to prevent accidental removal.
-<img width="1902" height="915" alt="image" src="https://github.com/user-attachments/assets/d0d15233-00ba-493c-81f5-e301ce52b080" />
+![Custom slug](https://github.com/user-attachments/assets/452a29ab-0cd4-4b0d-9e71-9811c3b9cf1c)
 
+All your shortened links are listed below the form with the original URL,
+short link, how many times it was clicked, and a delete button on the right.
+
+![Links](https://github.com/user-attachments/assets/146e3884-02c1-4d55-81d5-37ff35300659)
+
+When you click delete it shows a confirmation popup so you don't delete by accident.
+You can either abort or confirm the deletion.
+
+![Delete](https://github.com/user-attachments/assets/d0d15233-00ba-493c-81f5-e301ce52b080)
+
+## How to run
+Make sure the backend is running on http://localhost:8080 first,
+then just open index.html in your browser.
+
+## Backend
+https://github.com/imerone/urlshortbackend

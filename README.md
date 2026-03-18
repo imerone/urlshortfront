@@ -1,5 +1,5 @@
-Main landing page with Mercury planet background and animated starfield.
-Paste any long URL into the input field and hit WARP to generate a short link instantly.
+##Main landing page with Mercury planet background and animated starfield.
+#Paste any long URL into the input field and hit WARP to generate a short link instantly.
 <img width="1898" height="913" alt="image" src="https://github.com/user-attachments/assets/3205d724-62b2-40e8-906e-f3c1904e5b62" />
 
 

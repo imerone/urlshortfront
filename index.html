@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IMERONE — URL Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<div class="planet-wrap">
+  <div class="planet">
+    <div class="crater cr1"></div>
+    <div class="crater cr2"></div>
+    <div class="crater cr3"></div>
+    <div class="crater cr4"></div>
+    <div class="shine"></div>
+    <div class="shadow"></div>
+  </div>
+  <div class="planet-halo"></div>
+</div>
+<div class="scanlines"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="pip"></span>
+    IMERONE
+  </div>
+  <div class="nav-right">
+    <span class="online-dot"></span>
+    <span class="online-label">SYS ONLINE</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="eyebrow">✦ MERCURY DEEP SPACE RELAY ✦</p>
+  <h1>Compress.<br><em>Launch. Arrive.</em></h1>
+  <p class="tagline">Warp your URLs across the void — instant, trackable, deletable.</p>
+</header>
+
+<!-- FORM CARD -->
+<main>
+  <div class="card form-card">
+    <div class="card-label">⌖ ENTER COORDINATES</div>
+
+    <div class="field-group">
+      <label class="field-label">LONG URL</label>
+      <div class="field-row">
+        <span class="field-prefix">https://</span>
+        <input id="urlInput" type="text"
+          placeholder="your-long-destination.com/goes/here"
+          autocomplete="off" spellcheck="false"/>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="field-label">CUSTOM SLUG <span class="optional">(optional — leave blank for random)</span></label>
+      <div class="field-row slug-row">
+        <span class="field-prefix">localhost:8080/</span>
+        <input id="slugInput" type="text"
+          placeholder="my-custom-link"
+          autocomplete="off" spellcheck="false"
+          maxlength="30"/>
+      </div>
+    </div>
+
+    <button id="warpBtn" onclick="shortenURL()">
+      <span id="warpText">WARP ▶</span>
+    </button>
+
+    <div id="result" class="result hidden">
+      <div class="result-top">
+        <span class="result-ping"></span>
+        TRANSMISSION CONFIRMED
+      </div>
+      <div class="result-bottom">
+        <div>
+          <div class="result-label">YOUR SHORT LINK</div>
+          <a id="shortLink" href="#" target="_blank"></a>
+        </div>
+        <button id="copyBtn" class="copy-btn" onclick="copyURL()">⊕ COPY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS TABLE -->
+  <div class="card table-card">
+    <div class="table-head">
+      <div class="card-label">◈ ACTIVE TRANSMISSIONS</div>
+      <span id="linkCount" class="badge">00</span>
+    </div>
+
+    <div id="linksList"></div>
+  </div>
+</main>
+
+<!-- TOAST -->
+<div id="toast" class="toast hidden">✓ COPIED TO CLIPBOARD</div>
+
+<!-- DELETE MODAL -->
+<div id="modal" class="modal-overlay hidden" onclick="handleModalClick(event)">
+  <div class="modal">
+    <div class="modal-icon">⚠</div>
+    <div class="modal-title">CONFIRM DELETION</div>
+    <p class="modal-msg">This transmission will be permanently destroyed.</p>
+    <div class="modal-btns">
+      <button class="btn-abort" onclick="closeModal()">ABORT</button>
+      <button class="btn-destroy" id="destroyBtn">DESTROY</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
